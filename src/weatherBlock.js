@@ -1,7 +1,6 @@
 // format weather and informaiton here
 import react from "react";
 import date from "./currentDate";
-//import temp from "./currentTemp";
 
 export default function weatherFormatter (props) {
     return (
