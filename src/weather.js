@@ -1,10 +1,12 @@
 
 import react, {useState} from "react";
 import axios from "axios";
+import weatherInfo from "./weatherBlock";
 
 
 export default function Weather (props) {
     const [weather, obtainWeather] = useState(null);
+    const [city,getCity] = useState(null)
 
     function handleResponse (response) {
         obtainWeather ({
@@ -23,10 +25,11 @@ export default function Weather (props) {
         event.preventDefault();
         apiImplementation();
     }
+
     function apiImplementation() {
         let apiKey = "4a89eb9a057b7d42b2048718c9361f4a";
-        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
-        get(apiUrl).then (handleResponse);
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+        axios.get(apiUrl).then (handleResponse);
     }
 
     return (
