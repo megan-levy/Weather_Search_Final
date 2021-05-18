@@ -7,9 +7,6 @@ function App() {
       <header className="App-header">
         <h1>Levy Weather App</h1>
       </header>
-      //Search
-      //City
-      //Day/Time
     </div>
   );
 }
