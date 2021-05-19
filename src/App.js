@@ -1,4 +1,4 @@
-import Weather from "./weather";
+import Weather from "./Weather";
 import './App.css';
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <h1>Levy Weather App</h1>
       </header>
-      <Weather />
+      <Weather defaultCity = "Cincinnati"/>
       <footer>
         This project was coded by {" "}
         <a href = "https://github.com/megan-levy"> Megan Levy </a> {" "}
