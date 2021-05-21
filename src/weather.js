@@ -22,25 +22,24 @@ export default function Weather (props) {
         });
           }
         
-
-    function searchCity (event) {
-        setCity(event.target.value);
-    }
+   function search() {
+        const apiKey = "4a89eb9a057b7d42b2048718c9361f4a";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+        axios.get(apiUrl).then(handleResponse);
+     }    
 
     function handleSubmit(event) {
         event.preventDefault();
        
         if (city.length > 0 ) {
-        searchCity();
+        search();
         } else {
             alert ("type something");
           }
     }
 
-    function search() {
-        const apiKey = "4a89eb9a057b7d42b2048718c9361f4a";
-        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
-        axios.get(apiUrl).then (handleResponse);
+    function searchCity (event) {
+        setCity(event.target.value);
     }
 
     if (weather.loaded) {
