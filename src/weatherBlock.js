@@ -1,7 +1,7 @@
 // format weather and informaiton here
 import React from "react";
 import axios from "axios";
-import CurrentDate from "./CurrentDate";
+import CurrentDate from "./currentDate";
 import CurrentTemp from "./CurrentTemp";
 import WeatherIcon from "./weatherIcon";
 import './App.css';
