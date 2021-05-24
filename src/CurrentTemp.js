@@ -19,7 +19,7 @@ export default function GetTemp (props) {
         <span className= "temperature">
             {Math.round(props.temp)}
         </span>
-        <span className="unit">°F | <a href ="/" onClick = {unitConversionCelsius}>°C</a></span> 
+        <span className="unit">°F | <span onClick = {unitConversionCelsius}>°C</span></span> 
     </div>
     );
    } else {
@@ -29,7 +29,7 @@ export default function GetTemp (props) {
         <span className= "temperature">
             {Math.round(celsius)}
         </span>
-        <span className="unit">°C | <a href ="/" onClick = {unitConversionFahrenheit}>°F</a></span> 
+        <span className="unit">°C | <span onClick = {unitConversionFahrenheit}>°F</span></span> 
     </div>
        );
    }
