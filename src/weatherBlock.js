@@ -4,13 +4,13 @@ import axios from "axios";
 import CurrentDate from "./CurrentDate";
 import CurrentTemp from "./CurrentTemp";
 import WeatherIcon from "./weatherIcon";
+import './App.css';
 
 
 export default function WeatherInfo(props) {
     return (
-        <div className = "weatherInfo">
-        <div className = "row">
-            <div className = "col-5">
+        <div className = "weatherInfo" >
+        <div className="container">
             <h1>
                 {props.data.city}
             </h1>
@@ -18,12 +18,11 @@ export default function WeatherInfo(props) {
             <h2>
                 <CurrentDate date = {props.data.date}/>
             </h2>
-            <div>
-                <div className = "col-4">
+            <div className="row">
+                <div className = "col-10">
                     <ul>
-                        <li>
-                            <CurrentTemp temp = {Math.round(props.data.temp)} /> 
-                        </li>
+                        <li><WeatherIcon code={props.data.icon} size={52} /></li>
+                        
                         <li>
                             {props.data.description}
                         </li>
@@ -35,11 +34,11 @@ export default function WeatherInfo(props) {
                         </li>
                     </ul>
                 </div>
-                <div className= "col-3">
-                <WeatherIcon code={props.data.icon} size={52} />
+                <div className= "col-2">
+                <CurrentTemp temp = {Math.round(props.data.temp)} /> 
                 </div>
             </div>
         </div>
-    </div>
+ 
     );
 }
