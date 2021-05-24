@@ -1,7 +1,7 @@
 
 import React, {useState} from "react";
 import axios from "axios";
-import WeatherInfo from "./WeatherBlock";
+import WeatherInfo from "./weatherBlock";
 //import temp from "./CurrentTemp";
 
 
