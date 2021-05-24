@@ -1,5 +1,5 @@
 //weather icon and descriprion
-import react from "react";
+//import react from "react";
 import ReactAnimatedWeather from "react-animated-weather";
 
 export default function Icon (props) {
