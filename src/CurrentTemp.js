@@ -23,7 +23,7 @@ export default function GetTemp (props) {
     </div>
     );
    } else {
-       let celsius = ((props.temp) * 5/9)- 32;
+       let celsius = ((props.temp) - 32)* 5/9;
        return (
         <div className = "Weathertemperature">
         <span className= "temperature">
