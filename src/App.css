@@ -4,9 +4,9 @@
   border-radius: 10px;
   padding: 30px;
   margin: 30px auto;
-  background-color: rgb(238, 201, 226);
+  background-color: #FFFAFF;
   height: 400px;
-  border-color: #110d10;
+  border-color: #171A21;
   border-width: 8px;
   font-family: "Crimson Text", serif;
   max-width: 500px;
@@ -32,6 +32,7 @@ ul {
 }
 .row {
   display: flex;
+  
 }
 .col-10 {
   padding: 20px;
@@ -45,11 +46,18 @@ ul {
 footer {
   text-align: center;
   font-size: 12px;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   font-family: Arial, Helvetica, sans-serif;
 }
 .searchbar {
   padding-left: 6px;
   margin-right: 50px;
   margin-left: -250px;
+}
+
+.submit {
+  border-radius: 40;
+  margin: 10 px;
+  background-color: #68C3D4;
 }
