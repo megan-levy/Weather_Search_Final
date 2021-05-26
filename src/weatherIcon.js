@@ -1,4 +1,4 @@
-//weather icon and descriprion
+//weather icon and descriprion 
 //import react from "react";
 import ReactAnimatedWeather from "react-animated-weather";
 

@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import axios from "axios";
 import WeatherInfo from "./weatherBlock";
 //import temp from "./CurrentTemp";
+import weatherForecast from "./weatherForecast";
 
 
 export default function Weather (props) {
@@ -18,7 +19,8 @@ export default function Weather (props) {
           description: response.data.weather[0].description,
           temp: response.data.main.temp,
           wind: response.data.wind.speed,
-          humidity: response.data.main.humidity   
+          humidity: response.data.main.humidity,
+          coordinates: response.data.coord,
         });
           }
         
@@ -48,10 +50,11 @@ export default function Weather (props) {
         <div className = "searchbar">
         <form onSubmit= {handleSubmit}>
             <input type="search" placeholder="Enter a city..." onChange={searchCity} />
-            <input type="submit" value="submit" />
+            <input type="submit" value="submit" className= "submit"/>
         </form>
         </div>
         <WeatherInfo data = {weather}/>
+        <weatherForecast data = {weather.coordinates}/>
         </div>
     );
     } else {

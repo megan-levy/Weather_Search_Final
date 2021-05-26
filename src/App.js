@@ -7,6 +7,7 @@ function App() {
     <div className="App">
     
       <Weather defaultCity = "Cincinnati"/>
+      
       <footer>
         This project was coded by {" "}
         <a href = "https://github.com/megan-levy"> Megan Levy </a> {" "}

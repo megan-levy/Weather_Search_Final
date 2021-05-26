@@ -6,7 +6,6 @@ import CurrentTemp from "./CurrentTemp";
 import WeatherIcon from "./weatherIcon";
 import './App.css';
 
-
 export default function WeatherInfo(props) {
     return (
         <div className = "weatherInfo" >
