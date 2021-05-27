@@ -3,16 +3,16 @@ import React, {useState} from "react";
 import axios from "axios";
 import WeatherInfo from "./weatherBlock";
 //import temp from "./CurrentTemp";
-import weatherForecast from "./weatherForecast";
+import Load from "./weatherForecast";
 
 
 export default function Weather (props) {
-    const [weather, setWeather] = useState({loaded: false});
+    const [weather, setWeather] = useState({ready: false});
     const [city, setCity] = useState(props.defaultCity);
  
     function handleResponse(response){
         setWeather({
-          loaded: true,
+          ready: true,
           city: response.data.name,
           date: new Date (response.data.dt*1000),
           icon: response.data.weather[0].icon,
@@ -32,19 +32,14 @@ export default function Weather (props) {
 
     function handleSubmit(event) {
         event.preventDefault();
-       
-        if (city.length > 0 ) {
-        search();
-        } else {
-            alert ("type something");
-          }
+       search();
     }
 
     function searchCity (event) {
         setCity(event.target.value);
     }
 
-    if (weather.loaded) {
+    if (weather.ready) {
     return (
         <div className = "weather">
         <div className = "searchbar">
@@ -54,7 +49,7 @@ export default function Weather (props) {
         </form>
         </div>
         <WeatherInfo data = {weather}/>
-        <weatherForecast data = {weather.coordinates}/>
+        <Load data = {weather.coordinates}/>
         </div>
     );
     } else {

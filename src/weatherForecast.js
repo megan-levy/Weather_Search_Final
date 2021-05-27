@@ -6,7 +6,7 @@ import React, {useState, useEffect} from "react";
 
 export default function WeatherForecast (props) {
 
-    let [load, setLoaded] = useState(false);
+    let [Loaded, setLoaded] = useState(false);
     let [forecast, setForecast] = useState(null);
 
     function handleResponse(response) {
@@ -18,19 +18,21 @@ export default function WeatherForecast (props) {
         setLoaded(false);
       }, [props.coordinates]);
 
-    function Load() {
+    function Load(props) {
         let apiKey = "4a89eb9a057b7d42b2048718c9361f4a";
+
         let longitude = props.coordinates.lon;
         let latitude = props.coordinates.lat;
-        let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude={part}&appid=${apiKey}`;
+
+        let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
         axios.get(apiURL).then(handleResponse)
     }
 
-    if (load) {
+    if (Loaded) {
         return (
           <div className="FiveDayFOrecast">
             <div className="row">
-              {forecast.map(function (dailyForecast, index) {
+              {forecast.map (function(dailyForecast, index) {
                 if (index < 5) {
                   return (
                     <div className="col" key={index}>
@@ -38,16 +40,14 @@ export default function WeatherForecast (props) {
                     </div>
                   );
                 } else {
-                  return null;
+                  Load();
+                    return null; 
                 }
               })}
             </div>
           </div>
         );
-      } else {
-        load();
-    
-        return null;
+
       }
 
     }
