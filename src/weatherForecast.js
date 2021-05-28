@@ -5,7 +5,6 @@ import React, {useState, useEffect} from "react";
 
 
 export default function WeatherForecast (props) {
-
     let [Loaded, setLoaded] = useState(false);
     let [forecast, setForecast] = useState(null);
 
@@ -18,7 +17,7 @@ export default function WeatherForecast (props) {
         setLoaded(false);
       }, [props.coordinates]);
 
-    function Load(props) {
+    function Load() {
         let apiKey = "4a89eb9a057b7d42b2048718c9361f4a";
 
         let longitude = props.coordinates.lon;
@@ -40,7 +39,6 @@ export default function WeatherForecast (props) {
                     </div>
                   );
                 } else {
-                  Load();
                     return null; 
                 }
               })}
@@ -48,6 +46,9 @@ export default function WeatherForecast (props) {
           </div>
         );
 
+      } else {
+        Load();
+        return null;
       }
 
     }

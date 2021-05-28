@@ -1,9 +1,8 @@
 
-import React, {useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import WeatherInfo from "./weatherBlock";
-//import temp from "./CurrentTemp";
-import Load from "./weatherForecast";
+import WeatherForecast from "./weatherForecast";
 
 
 export default function Weather (props) {
@@ -43,14 +42,18 @@ export default function Weather (props) {
     return (
         <div className = "weather">
         <div className = "searchbar">
-        <form onSubmit= {handleSubmit}>
-            <input type="search" placeholder="Enter a city..." onChange={searchCity} />
-            <input type="submit" value="submit" className= "submit"/>
-        </form>
-        </div>
-        <WeatherInfo data = {weather}/>
-        <Load data = {weather.coordinates}/>
-        </div>
+            <form onSubmit= {handleSubmit}>
+                <input 
+                    type="search" 
+                    placeholder="Enter a city..." 
+                    onChange={searchCity}
+                 />
+                <input type="submit" value="submit" className= "submit"/>
+            </form>
+            </div>
+            <WeatherInfo data = {weather}/>
+            <WeatherForecast coordinates = {weather.coordinates}/>
+            </div>
     );
     } else {
         search();
