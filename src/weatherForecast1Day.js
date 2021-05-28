@@ -8,7 +8,7 @@ export default function WeatherForecastDay(props) {
     
         let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     
-        return `${day[date.getDay()]}`;
+        return days[day];
       }
     function tempHigh () {
         let temperature = Math.round(props.data.temp.max);
